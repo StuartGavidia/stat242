@@ -7,7 +7,7 @@ library(tidyr) # For data tidying
 
 
 View(project_data)
-
+#test comment
 #Means within continents for num_phones and population
 continentMeans <- project_data %>% 
 group_by(continent) %>%
