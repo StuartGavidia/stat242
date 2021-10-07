@@ -1,0 +1,54 @@
+---
+title: "Data Visualization"
+author: "Stuart Gavidia"
+date: "9/30/21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(openintro)
+library(ggthemes)
+```
+
+### Problem One:
+Re-create your histogram from lab 1 using a different color for the bars and a theme from the ggthemes package.
+
+```{r}
+
+ggplot(data = gpa_study_hours, mapping = aes(x = study_hours))+
+  geom_histogram(color = "green", binwidth = 2,
+                 fill = "darkgreen", size = 1)+
+  theme_calc()
+
+```
+
+### Problem Two: 
+Create a custom histogram using one of the variables in the `diamonds` data set. It should include one (or more): 
+
+*change to text
+
+*change to panel
+
+*change to plot
+
+*change to histogram/boxplot
+
+```{r}
+
+ggplot(data = diamonds, mapping = aes(x = color))+
+  geom_bar(color = "blue",
+                 fill = "lightblue", size = 1)+
+  theme(plot.background = element_rect(fill = "cyan"),
+        text = element_text(size = 15, face = "italic"),
+        axis.text = element_text(color = "black"),
+        panel.background = element_rect(color = "red"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_line(color = "black"),
+        panel.grid.major.y = element_line(color = "black", size  = 0.5),
+
+        )
+
+```
